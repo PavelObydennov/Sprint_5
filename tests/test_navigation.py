@@ -1,5 +1,7 @@
+import pytest
 from locators import Locators
 from urls import Urls
+from conftest import driver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -59,7 +61,7 @@ class TestNavigation:
 
         WebDriverWait(driver, 7).until(
             EC.visibility_of_element_located(Locators.LOGIN_PASSWORD_FIELD)
-        ).send_keys("password123")
+        ).send_keys("123456789!!!")
 
         WebDriverWait(driver, 7).until(
             EC.element_to_be_clickable(Locators.LOGIN_SUBMIT_BUTTON)
